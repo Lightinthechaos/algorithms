@@ -1,0 +1,121 @@
+\documentclass[12pt]{article}
+\addtolength{\topmargin}{-1.5cm}
+\addtolength{\textheight}{3.5cm}
+\addtolength{\oddsidemargin}{-2cm}
+\addtolength{\evensidemargin}{-2cm}
+\addtolength{\textwidth}{3.4cm}
+\begin{document}
+
+{\Large \bf
+\begin{center}
+
+CP 312, Fall 2018 \\
+
+Assignment 1 \ \ \ (5\% of the final grade)\\
+
+\end{center}
+} \vspace{0.2cm}
+There are five questions on this assignment. Note
+that all logarithms in this assignment are base 2, i.e. $\log f(n)
+\equiv \log_2 f(n)$.
+
+\vspace{0.2cm}
+
+\begin{enumerate}
+
+% question 1
+\item{[2 marks]} Using the definition of $\Theta$-notation,
+prove that $(13n+3) (9n + 1) (\log (4n^2+100))  \in \Theta(n^2 \log n)$.
+
+\vspace{0.5cm}
+
+% question 2
+\item{[10 marks]} For each of the following pairs of functions $f(n)$
+and $g(n)$, determine the {\bf most appropriate symbol} in the set $\{ O,
+o, \Theta, \Omega, \omega \}$ to complete the statement \\
+$f(n) \in $
+\verb| __ | $\left( g(n) \right)$ (if one of the symbols applies at all).\\
+Remark: Although $n \in O(2^n)$ is technically correct, $n \in o(2^n)$ is
+more appropriate as it gives more information. \\
+Justify your answer.
+
+You may use the following information, where $f(n) \ll g(n)$ is
+shorthand for $f(n) \in o(g(n)$:
+
+$$1 \ll \log \log n \ll \log n \ll \log^2 n \ll \sqrt{n} \ll n \ll n \log n \ll n^2 \ll 2^n \ll n!$$
+
+Furthermore, for all positive real $a$ and $b$, $n^a \in o(n^b)$ if $ a < b$, $\log^a n \in
+o(n^b)$, and $n^a \in o(2^n)$.
+
+\vspace{0.5cm}
+
+(a) $f(n) = 1052n^3+10n^2+10001, \ \ g(n) = \frac{2}{10000000} n^4+2n$;\\
+(b) $f(n) = \log^3(n^{10}), \ \ g(n) = \sqrt{\sqrt{n}}$;\\
+(c) $f(n) = n^4\log n, \ \ g(n) = 2 n^4 {\log n^{2004}}$;\\
+(d) $f(n) = 16^{\log \sqrt{n}}, \ \ g(n) = n^{2}$\ ; \\
+(e) $f(n) = n^{2+\sin \frac{n \pi}{2}}, \ \ g(n) = n^{5/3}$.
+\vspace{0.5cm}
+
+% question 3
+\item{[10 marks]}
+Consider each of the following statements, assuming that all functions are non-negative: \\
+\vspace{0.5cm}
+
+\noindent
+a) if $f_1(n) \in \Theta(g(n))$ and $f_2(n) \in \Theta(g(n))$, then
+$f_1(n)-f_2(n) \in O(1)$;\\
+b) if $f_1(n) \in O(g_1(n))$ and $f_2(n) \in O(g_2(n))$, then
+$f_1(n)f_2(n) \in \Theta(g_1(n)g_2(n))$; \\
+c) if $f_1(n) \in \Theta(g(n))$ and $f_2(n) \in \Theta(g(n))$, then
+$f_1(n)/f_2(n) \in \Theta(1)$;\\
+d) if $\log (f(n)) \in O(\log(g(n)))$
+then $f(n) \in O(g(n))$.\\
+
+%\vspace{0.5cm}
+For each statement: if the statement is true then provide a proof
+that starts with the formal definition of the order notation
+utilized in the statement. If the statement is false then provide a
+counter example and  demonstrate why the statement is false.
+
+%\vspace{0.5cm}
+
+% question 4
+\item{[4 marks]} Analyze the following pseudocode and give a tight
+($\Theta$) bound on the running time
+as a function of $n$. You can assume that all individual instructions
+are elementary. Show your work. \\
+\verb|     |$l$ \verb| := | 0;\\
+\verb|     for |$i=1$ \verb| to | $ n $ \verb| do |\\
+\verb|       for |$j=i$ \verb| to | $n \cdot i$ \verb|  do |\\
+%%\verb|          for |$k=1$ \verb| to | $\lceil \log j \rceil$ \verb|  do |\\
+\verb|          |$l $\verb| := | $l+2*i+3*j$\\
+%%\verb|          od  |\\
+\verb|       od  |\\
+\verb|     od.|\\
+
+\vspace{0.5cm}
+
+% question 5
+\item{[4 marks]} Analyze the following pseudocode and give a tight
+($\Theta$) bound on the running time
+as a function of $n$. You can assume that all individual instructions
+are elementary. Show your work. \\
+\\
+\verb|     |$k$ \verb| := | $n$; $s$ \verb| := | $0$;\\
+%%\verb|     while |$k<n$ \verb| do |\\
+\verb|     for |$i=1$ \verb| to | $k$ \verb|  do |\\
+\verb|        for |$j=1$ \verb| to | $\left\lceil \log i \right\rceil$ \verb|  do |\\
+\verb|            |$s $\verb| := | $s+i*j$\\
+\verb|        od  |\\
+\verb|     od  |\\
+\verb|     for |$i=11k+1$ \verb| to | $33k$ \verb|  do |\\
+\verb|        |$s $\verb| := | $s+1$\\
+\verb|     od  |\\
+%%\verb|       |$k$ \verb| := | $2$ \verb|*| $k$\\
+%%\verb|     od.|\\
+
+
+\end{enumerate}
+
+
+\end{document}
